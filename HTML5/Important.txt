@@ -1,0 +1,146 @@
+Linking to an Email Address
+----------------------------
+<a href="mailto:shay@awesome.com?subject=Reaching%20Out&body=How%20are%20you">Email Me</a>
+
+Opening Links in a New Window
+-----------------------------
+One feature available with hyperlinks is the ability to determine where a link opens when clicked. 
+Typically, links open in the same window from which they are clicked; however, links may also be opened in new windows.
+
+To trigger the action of opening a link in a new window, use the target attribute with a value of _blank. 
+The target attribute determines exactly where the link will be displayed, and the _blank value specifies a new window.
+
+<a href="http://shayhowe.com/" target="_blank">Shay Howe</a>
+
+Linking to Parts of the Same Page
+----------------------------------
+Periodically we’ll see hyperlinks that link to part of the same page the link appears on. 
+A common example of these same-page links are “Back to top” links that return a user to the top of a page.
+
+We can create an on-page link by first setting an id attribute on the element we wish to link to, 
+then using the value of that id attribute within an anchor element’s href attribute.
+
+Using the “Back to top” link as an example, we can place an id attribute value of top on the <body> element. 
+Now we can create an anchor element with an href attribute value of #top, pound sign and all, 
+to link to the beginning of the <body> element.
+
+Our code for this same-page link would look like the following:
+
+<body id="top">
+  ...
+  <a href="#top">Back to top</a>
+  ...
+</body>
+
+
+Creating Lists
+======================
+When we want to use a list on a website, HTML provides three different types to choose from: 
+unordered, ordered, and description lists. 
+Choosing which type of list to use—or whether to use a list at all—comes down to the content 
+and the most semantically appropriate option for displaying that content.
+
+Unordered Lists
+----------------
+An unordered list is simply a list of related items whose order does not matter.
+ Creating an unordered list in HTML is accomplished using the unordered list block-level element, <ul>. 
+Each item within an unordered list is individually marked up using the list item element, <li>.
+
+By default, most browsers add a vertical margin and left padding to the <ul> element and precede each <li> element with a (solid) dot. 
+This solid dot is called the list item marker, and it can be changed using CSS.
+
+<ul>
+  <li>Orange</li>
+  <li>Green</li>
+  <li>Blue</li>
+</ul>
+
+Ordered Lists
+--------------
+The main difference between an ordered list and an unordered list is that with an ordered list, 
+the order in which items are presented is important.
+
+Start Attribute
+-=-=-=-=-=-=-=----
+The start attribute defines the number from which an ordered list should start.
+
+<ol start="30">
+  <li>Head north on N Halsted St</li>
+  <li>Turn right on W Diversey Pkwy</li>
+  <li>Turn left on N Orchard St</li>
+</ol>
+
+Reversed Attribute
+-=-=-=-=-=-=-=-=-=-=
+The reversed attribute, when used on the <ol> element, allows a list to appear in reverse order.
+An ordered list of five items numbered 1 to 5 may be reversed and ordered from 5 to 1.
+<ol reversed>
+  <li>Head north on N Halsted St</li>
+  <li>Turn right on W Diversey Pkwy</li>
+  <li>Turn left on N Orchard St</li>
+</ol>
+
+Value Attribute
+-=-=-=-=-=-=-=-=-
+The value attribute may be used on an individual <li> element within an ordered list to change its value within the list.
+
+<ol>
+  <li>Head north on N Halsted St</li>
+  <li vallue="9">Turn right on W Diversey Pkwy</li>
+  <li>Turn left on N Orchard St</li>	<!-- This then becomes number 10-->
+</ol>
+
+Description Lists
+------------------------
+When adding a description list, the <dt> element must come before the <dd> element. 
+The definition term and the description that directly follows it correspond to one another; 
+thus, the order of these elements is important.
+
+<dl>
+  <dt>study</dt>
+  <dd>The devotion of time and attention to acquiring knowledge on an academic subject, especially by means of books</dd>
+  <dt>design</dt>
+  <dd>A plan or drawing produced to show the look and function or workings of a building, garment, 
+		or other object before it is built or made</dd>
+  <dd>Purpose, planning, or intention that exists or is thought to exist behind an action, fact, or material object</dd>
+  <dt>business</dt>
+  <dt>work</dt>
+  <dd>A person's regular occupation, profession, or trade</dd>
+</dl>
+
+Nesting Lists
+----------------------
+One trick with nesting lists is to know where to begin and end each list and list item. 
+Speaking specifically about unordered and ordered lists, as that is where most nesting will occur, 
+the only element that may reside directly within the <ul> and <ol> elements is the <li> element. 
+To repeat, the only element we can place as a direct child of the <ul> and <ol> elements is the <li> element.
+
+<ol>
+  <li>Walk the dog</li>
+  <li>Fold laundry</li>	<!-- occurs with numbers -->
+  <li>
+    Go to the grocery and buy:
+    <ul>
+      <li>Milk</li>	<!-- occurs with (hollow) dot -->
+      <li>Bread</li>
+      <li>Cheese</li>
+    </ul>
+  </li>
+  <li>Mow the lawn</li>
+  <li>Make dinner</li>
+</ol>
+
+
+======================
+Adding Images
+======================
+To add images to a page, we use the <img> inline element. 
+The <img> element is a self-containing, or empty, element, which means that it doesn’t wrap 
+any other content and it exists as a single tag.
+{NOTE:  We most commonly see jpg images used for photographs and png images used for icons or background patterns}
+
+<img src="dog.jpg" alt="A black, brown, and white dog wearing a kerchief">
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FOR FONTAWESOME - https://fontawesome.com/v4.7.0/get-started/
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
